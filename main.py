@@ -9,14 +9,14 @@ IMG_DIR = 'img_text'
 imgTextDir = curDir + '/' + IMG_DIR
 
 files = os.listdir(imgTextDir)
-cnt = 0
+cnt = 1 
 for file in files:
     index = re.search(TXT_EXT, file)
     if index:
         cnt = cnt + 1
 
 while True:
-    for i in range(1, cnt + 1):
+    for i in range(1, cnt):
         f = open('./' + IMG_DIR + '/' + str(i) + TXT_EXT)
         data = f.read()
         f.close()
