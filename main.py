@@ -1,8 +1,11 @@
 import os
 import re
+import sys
 from time import sleep
 
 curDir = os.getcwd()
+args = sys.argv
+sleepTime = float(args[1]) if len(args) > 1 else 0.3
 
 TXT_EXT = '.txt'
 IMG_DIR = 'img_text'
@@ -25,5 +28,5 @@ while True:
         for line in lines:
             print(line)
 
-        sleep(0.3);
+        sleep(sleepTime);
         os.system('cls')
