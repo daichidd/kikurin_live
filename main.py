@@ -3,15 +3,16 @@ import re
 import sys
 from time import sleep
 
-curDir = os.getcwd()
+cur_dir = os.getcwd()
 args = sys.argv
-sleepTime = float(args[1]) if len(args) > 1 else 0.3
+sleep_time = float(args[1]) if len(args) > 1 else 0.3
 
 TXT_EXT = '.txt'
 IMG_DIR = 'img_text'
-imgTextDir = curDir + '/' + IMG_DIR
+img_text_dir = cur_dir + '/' + IMG_DIR
+img_text_dir = args[2] if len(args) > 2 else image_text_dir
 
-files = os.listdir(imgTextDir)
+files = os.listdir(img_text_dir)
 cnt = 1 
 for file in files:
     index = re.search(TXT_EXT, file)
@@ -28,5 +29,5 @@ while True:
         for line in lines:
             print(line)
 
-        sleep(sleepTime);
+        sleep(sleep_time);
         os.system('cls')
